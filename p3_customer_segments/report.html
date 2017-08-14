@@ -11987,6 +11987,12 @@ div#notebook {
 <span class="n">samples</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indices</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Chosen samples of wholesale customers dataset:&quot;</span>
 <span class="n">display</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s2">&quot;Samples compared to the mean&quot;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">samples</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
+
+<span class="k">print</span> <span class="s2">&quot;Samples compared to the median&quot;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">samples</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12068,6 +12074,148 @@ div#notebook {
 
 </div>
 
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Samples compared to the mean
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>28721.0</td>
+      <td>-1880.0</td>
+      <td>-2075.0</td>
+      <td>-2540.0</td>
+      <td>-294.0</td>
+      <td>-247.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-406.0</td>
+      <td>1983.0</td>
+      <td>4193.0</td>
+      <td>180.0</td>
+      <td>5154.0</td>
+      <td>1504.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-8809.0</td>
+      <td>-3803.0</td>
+      <td>-6152.0</td>
+      <td>-1342.0</td>
+      <td>-2647.0</td>
+      <td>-815.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Samples compared to the median
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>32217.0</td>
+      <td>289.0</td>
+      <td>1120.0</td>
+      <td>-994.0</td>
+      <td>1771.0</td>
+      <td>312.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3090.0</td>
+      <td>4152.0</td>
+      <td>7388.0</td>
+      <td>1726.0</td>
+      <td>7219.0</td>
+      <td>2063.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-5313.0</td>
+      <td>-1634.0</td>
+      <td>-2957.0</td>
+      <td>204.0</td>
+      <td>-582.0</td>
+      <td>-256.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -12090,9 +12238,9 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-The first one has a 'Fresh' expense of 40721, which is way larger than any of the other categories. So it is probably a kind of greengrocer.</p>
-<p>The second one has a similar expense in 'Fresh', 'Milk', 'Grocery' and 'Detergents_Paper'. So it must be a market/grocery store.</p>
-<p>The third one has a really balanced in everything but 'Detergents_Paper'. So it probably is a restaurant.</p>
+The first one has a 'Fresh' expense of 40721, which is way above average. And below average at all the other categories. So it is probably a kind of greengrocer.</p>
+<p>The second one is really above average on the features 'Milk', 'Grocery' and 'Detergents_Paper'. So it must be a market/grocery store.</p>
+<p>The third one is below average on every categorie. But the ones there are closest to the mean are 'Frozen' and 'Delicatessen'. So it probably is a restaurant.</p>
 
 </div>
 </div>
@@ -19685,7 +19833,7 @@ The first four principal components explains <strong>93.11%</strong> of the vari
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xc4ff2b0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xc9129e8&gt;</pre>
 </div>
 
 </div>
@@ -22247,10 +22395,13 @@ Sample point 2 predicted to be in Cluster 1
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
 We can't assume it will affects all customers equally.
-The effects it will have on Segments:
-   • <strong>Segment 0: </strong> It will have a big negative impact this segment. Since most of it's products perishable.</p>
+The effects it will have on Segments:</p>
+<p>• <strong>Segment 0: </strong> It will have a big negative impact this segment. Since most of it's products perishable.</p>
 <p>• <strong>Segment 1: </strong> The impact would not be that big here, because most of the products are non-perishable like 'Grocery' and 'Detergents_Paper'.</p>
-<p>So it is best if the wholesale distributor only make this changes for customers of the <strong>Segment 1</strong>.</p>
+<p>So it is best if the wholesale distributor only make these changes for customers of the <strong>Segment 1</strong>.</p>
+<p>To conduct the A/B test we could randomly divide the customers from Segment 1 into <code>n</code> sub-segments. Let's say 5. And then, do the experiments on one of the sub-segments. A weeks later, the customers from the sub-segment would answer a survey to measure their satisfaction.</p>
+<p>Then do the same with other sub-segment every week until we covered all 5.</p>
+<p>For those who had a decrease on the satisfaction, we can investigate what makes them feel that way and use this information to optimize the other sub-segments.</p>
 
 </div>
 </div>
